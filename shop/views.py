@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .models import Product
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
 
 def home(request):
     products = Product.objects.all()
@@ -30,3 +33,6 @@ def logout_user(request):
     logout(request)
     messages.success(request,("You have been logged out"))
     return redirect('home')
+
+def register_user(request):
+    return render(request,'register.html',{})

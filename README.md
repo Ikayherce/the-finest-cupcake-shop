@@ -97,3 +97,6 @@ youtube tutorials I followed:
 - https://www.youtube.com/watch?v=UqSJCVePEWU&list=PLOLrQ9Pn6caxY4Q1U9RjO1bulQp5NDYS_
 
 Code Institute's Boutique Ado walkthrough tutorial
+
+Register Form
+https://github.com/flatplanet/musker/blob/main/musker/forms.py
