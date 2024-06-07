@@ -63,7 +63,10 @@ Manual tests
 First release
 Second release
 ### Project Bugs and Solutions:
- 
+
+Not a bug but I did realise I wanted to enable multiple categories to be applied to products when product model has already been made. So I changed model in separate branch and then merged branches.
+
+
 
 Question seems to change author after editing
 Bootstrap's toasts floating left outside the 320px wide screens
