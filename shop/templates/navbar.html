@@ -18,12 +18,16 @@
             {% endif %}
             
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">All Products</a></li>
+                        <li><a class="dropdown-item" href="{% url 'home' %}">All Products </a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        <li><a class="dropdown-item" href="{% url 'category' 'Our Best-Selling Cupcakes'%}">Best-Selling</a></li>
+                        <li><a class="dropdown-item" href="{% url 'category' 'Wheat Flour Cupcakes'%}">Wheat Flour Cupcakes</a></li>
+                        <li><a class="dropdown-item" href="{% url 'category' 'Gluten-Free Cupcakes'%}">Gluten-Free</a></li>
+                        <li><a class="dropdown-item" href="{% url 'category' 'Soy-Free Cupcakes'%}">Soy-Free</a></li>
+                        <li><a class="dropdown-item" href="{% url 'category' 'Nut-Free Cupcakes'%}">Nut-Free</a></li>
+                        <li><a class="dropdown-item" href="{% url 'category' 'Theme-Decorated Cupcakes'%}">Theme-Decorated Cupcakes</a></li> 
                     </ul>
                 </li>
             </ul>
