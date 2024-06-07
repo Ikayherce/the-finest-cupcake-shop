@@ -6,7 +6,6 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">{{ category }}</h1>
                     <p class="lead fw-normal text-white-50 mb-0">Cupcakes by category</p>
                 </div>
             </div>
@@ -32,7 +31,12 @@
                                     <br/>
                                     {{ product.description }}
                                     <br/>
-                                    In: {{ product.category }}
+                                   {% if product.categories.exists %}
+                                    {% for category in product.categories.all %}
+                                        {{ category.name }}
+                                        {% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                {% endif %}
                                 </div>
                             </div>
                             <!-- Product actions-->

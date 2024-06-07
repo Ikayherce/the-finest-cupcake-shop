@@ -32,7 +32,10 @@
                                     <br/>
                                     {{ product.description }}
                                     <br/>
-                                    In: {{ product.category }}
+                                    {% for category in product.categories.all %}
+                                    {{ category.name }}
+                                    {% if not forloop.last %}, {% endif %}
+                                {% endfor %}
                                 </div>
                             </div>
                             <!-- Product actions-->
