@@ -89,14 +89,14 @@ https://github.com/ValeP314/pp5-tangled-treasures-v2
 User stories template inspired in https://www.smartsheet.com/user-story-templates
 
 For the code: 
-youtube tutorials I followed:
+Tutorials I followed:
 
+- Code Institute's Boutique Ado walkthrough tutorial
 - https://www.youtube.com/watch?v=_ELCMngbM0E&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng
 - https://www.youtube.com/watch?v=5n8FKv19os0&list=PL_KegS2ON4s53FNSqgXFdictTzUbGjoO-
 - https://www.youtube.com/watch?v=u6R4vBa7ZK4&list=PLCC34OHNcOtpRfBYk-8y0GMO4i1p1zn50
 - https://www.youtube.com/watch?v=UqSJCVePEWU&list=PLOLrQ9Pn6caxY4Q1U9RjO1bulQp5NDYS_
 
-Code Institute's Boutique Ado walkthrough tutorial
 
 Register Form
 https://github.com/flatplanet/musker/blob/main/musker/forms.py
