@@ -16,7 +16,9 @@
                 <br/>
                   <h5 class="card-title">{{ product.name }}</h5>
                   <p class="card-text">{{ product.description }}</p>
-                  <p class="card-text">{{ product.price }}</p>
+                  <p class="card-text">{{ product.price }}
+                    ID: {{ product.id }}
+                  </p>
                   <p class="card-text">
                     {% if product.categories.exists %}
                     {% for category in product.categories.all %}
@@ -27,6 +29,7 @@
                   </p>
                   <br><br/>
                 <a href ="{% url 'home' %}" class ="btn btn-secondary">Home</a>
+                <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
                 </center>
                 </div>
                 
@@ -35,4 +38,7 @@
               </div>
         </div>
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<script></script>
+
 {% endblock %}

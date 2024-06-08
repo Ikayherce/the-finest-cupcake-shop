@@ -35,6 +35,9 @@ Facebook
 Languages Used
 Technologies and Programs Used:
 Frameworks Libraries and Programs Used
+django
+jquery
+bootstrap
 Code Validation
 HTML beautify
 HTML valiation
