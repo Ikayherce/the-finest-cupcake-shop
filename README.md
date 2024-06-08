@@ -23,23 +23,9 @@ Sprints - milestones
 
 ### Existing Features
 Navbar and Footer
-Footer
-The caourusel
-The about page
 Shop
-Shopping cart
-FAQ
-User authentication
-Icons
-Buttons
-Future Features
-Current stock
-Javascript validation on input
-Success page after question is submitted
-Secured view to unsubscribe
-Dashboard for superuser
-search option in questions
-Search Engine Optimalization
+Cart
+Session 
 
 ### Web Marketing
 Newsletter
