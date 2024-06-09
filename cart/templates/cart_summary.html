@@ -2,16 +2,61 @@
 
 {% block content %}
 
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shopping Cart</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">View Your Cart</p>
-                </div>
-            </div>
-        </header>
-        
-        <br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/>
+<!-- Header-->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shopping Cart</h1>
+            <p class="lead fw-normal text-white-50 mb-0">View Your Cart</p>
+        </div>
+    </div>
+</header>
+<br>
+<div class="container">
 
-    {% endblock %}
+    {% if cart_products %}
+
+        {% for product in cart_products %}
+
+        <div class="container">
+            <br/>
+            <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                        <center>
+                    <br/>
+                      <h5 class="card-title">{{ product.name }}</h5>
+                      <p class="card-text">{{ product.description }}</p>
+                      <p class="card-text">{{ product.price }}</p>
+                      <p class="card-text">
+                        {% if product.categories.exists %}
+                            {% for category in product.categories.all %}
+                                {{ category.name }}
+                                {% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                      </p>
+                      <br><br/>
+                    <!--<a href ="{% url 'home' %}" class ="btn btn-secondary">Home</a>
+                    <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>-->
+                    </center>
+                    </div>
+                    
+                      </div>
+                    </div>
+                  </div>
+
+        {% endfor %}
+
+    {% else %}
+        There's nothing in your cart! You need to add cupcakes to this puppy right now!
+    {% endif %}
+
+</div>
+<br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/>
+
+{% endblock %}
