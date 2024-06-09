@@ -17,7 +17,6 @@
                   <h5 class="card-title">{{ product.name }}</h5>
                   <p class="card-text">{{ product.description }}</p>
                   <p class="card-text">{{ product.price }}
-                    ID: {{ product.id }}
                   </p>
                   <p class="card-text">
                     {% if product.categories.exists %}
@@ -53,7 +52,8 @@ $(document).on('click', '#add-cart', function(e){
         },
 
         success: function(json){
-          console.log(json)
+          //console.log(json)
+          documemt.getElementById("cart_quantity").textContent = json.qty
         },
 
         error: function(xhr, errormsg, err){
