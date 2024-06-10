@@ -18,8 +18,8 @@
                   <p class="card-text">{{ product.description }}</p>
                   <p class="card-text">{{ product.price }}
                   <br><br/>
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
+                  <select class="form-select form-select-sm" id="qty-cart" aria-label="Default select example">
+                    <option selected>Quantity</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -56,15 +56,17 @@
 
 <script>
 //Check if button is clicked
+// Check if button pressed
 $(document).on('click', '#add-cart', function(e){
     e.preventDefault();
     $.ajax({
         type: 'POST',
-        url: "{% url 'cart_add' %}",
+        url: '{% url 'cart_add' %}',
         data: {
-          product_id: $('#add-cart').val(),
-          csrfmiddlewaretoken: '{{ csrf_token }}',
-          action: 'post'
+    product_id: $('#add-cart').val(),
+    product_qty: $('#qty-cart option:selected').text(),
+    csrfmiddlewaretoken: '{{ csrf_token }}',
+    action: 'post'
         },
 
         success: function(json){
