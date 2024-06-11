@@ -45,7 +45,7 @@
                       <div class="row justify-content-center">
                         <div class="col-md-2">Quantity:</div>
                                     <div class="col-md-2">
-                                    <select class="form-select form-select-sm" id="qty-cart">
+                                    <select class="form-select form-select-sm" id="select {{product.id}}">
                                     
 
                                        {% for key,value in quantities.items %}
@@ -68,9 +68,10 @@
                                     </select>
                                     </div>
                                 </div>
-                    <!--<a href ="{% url 'home' %}" class ="btn btn-secondary">Home</a>-->
+                    <br><br/>
+                    <a href ="{% url 'home' %}" class ="btn btn-secondary">Home</a>
                     <button type="button" data-index="{{product.id}}" class="btn btn-secondary update-cart">Update</button>
-                    </center>
+                  </center>
                     </div>
                     
                       </div>
@@ -87,3 +88,40 @@
 <br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/>
 
 {% endblock %}
+<script>
+  
+  // Check if button pressed
+  $(document).on('click', '#add-cart', function(e){
+      e.preventDefault();
+      $.ajax({
+          type: 'POST',
+          url: '{% url 'cart_add' %}',
+          data: {
+      product_id: $('#add-cart').val(),
+      product_qty: $('#qty-cart option:selected').text(),
+      csrfmiddlewaretoken: '{{ csrf_token }}',
+      action: 'post'
+          },
+  
+          success: function(json){
+              //console.log(json)
+              document.getElementById("cart_quantity").textContent = json.qty
+              location.reload();
+          },
+  
+          error: function(xhr, errmsg, err){
+  
+          }
+  
+  
+      });
+  
+  
+  
+  })
+  
+  
+  
+  
+  </script>
+  
