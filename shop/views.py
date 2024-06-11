@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
 from django import forms
+from django.http import Http404
+
 
 def category(request,cat):
     #Replace hyphens with spaces
@@ -17,9 +19,12 @@ def category(request,cat):
         products = Product.objects.filter(category=category)
         return render(request, 'category.html', {'products':products,'category':category})
 
-    except:
-        messages.success(request, ("That category doesn't exist"))
-        return redirect('home')
+    except Category.DoesNotExist:
+        raise Http404("That category does not exist")
+
+    #except:
+    #    messages.success(request, ("That category doesn't exist"))
+    #    return redirect('home')
 
 
 def product(request,pk):
