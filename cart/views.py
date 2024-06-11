@@ -36,17 +36,31 @@ def cart_add(request):
 def cart_delete(request):
     pass
 
-
 def cart_update(request):
-	cart = Cart(request)
-	if request.POST.get('action') == 'post':
+    if request.method == 'POST' and request.POST.get('action') == 'post':
+        cart = Cart(request)
+        product_id = int(request.POST.get('product_id'))
+        product_qty = int(request.POST.get('product_qty'))
+
+        cart.update(product=product_id, quantity=product_qty)
+
+        response_data = {'qty': product_qty}
+        return JsonResponse(response_data)
+    else:
+        # Handle other cases (GET requests, invalid requests, etc.)
+        response_data = {'error': 'Invalid request'}
+        return JsonResponse(response_data, status=400)
+        
+#def cart_update(request):
+#	cart = Cart(request)
+#	if request.POST.get('action') == 'post':
 		# Get stuff
-		product_id = int(request.POST.get('product_id'))
-		product_qty = int(request.POST.get('product_qty'))
+#		product_id = int(request.POST.get('product_id'))
+#		product_qty = int(request.POST.get('product_qty'))
 
-		cart.update(product=product_id, quantity=product_qty)
+#		cart.update(product=product_id, quantity=product_qty)
 
-		response = JsonResponse({'qty':product_qty})
+#		response = JsonResponse({'qty':product_qty})
 		#return redirect('cart_summary')
-		messages.success(request, ("Your Cart Has Been Updated..."))
-		return response
+#		messages.success(request, ("Your Cart Has Been Updated"))
+#		return response

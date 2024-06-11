@@ -45,7 +45,7 @@
                       <div class="row justify-content-center">
                         <div class="col-md-2">Quantity:</div>
                                     <div class="col-md-2">
-                                    <select class="form-select form-select-sm" id="select {{product.id}}">
+                                    <select class="form-select form-select-sm" id="select{{product.id}}">
                                     
 
                                        {% for key,value in quantities.items %}
@@ -87,7 +87,7 @@
 </div>
 <br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/><br><br/>
 
-{% endblock %}
+
 <script>
   
   // Update Cart
@@ -98,7 +98,7 @@ $(document).on('click', '.update-cart', function(e){
 
     $.ajax({
     type: 'POST',
-    url: '{% url "cart_update" %}',
+    url: '{% url 'cart_update' %}',
     data: {
       product_id: $(this).data('index'),
       product_qty: $('#select' + productid + ' option:selected').text(),
@@ -124,3 +124,4 @@ $(document).on('click', '.update-cart', function(e){
   
   </script>
   
+{% endblock %}
