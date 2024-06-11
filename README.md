@@ -53,14 +53,11 @@ First release
 Second release
 ### Project Bugs and Solutions:
 
-Not a bug but I did realise I wanted to enable multiple categories to be applied to products when product model has already been made. So I changed model in separate branch and then merged branches.
+Not a bug but I did realise I wanted to enable multiple categories to be applied to products when product model has already been made. So I changed model in separate branch and then merged branches. I had a problem after that so I had to clear all migrations to delete data and start all over again and make new migrations.
 
 
 
-Question seems to change author after editing
-Bootstrap's toasts floating left outside the 320px wide screens
-ununified comments - end of container and others
-Button In trolley on all trees view
+
 ### Deployment and forking repo / new branch
 Deployment to heroku
 Forking the GitHub Repository
