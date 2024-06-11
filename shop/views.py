@@ -14,13 +14,13 @@ def category(request,cat):
     try:
     #Look up the category
         category = Category.objects.get(name=cat)
-        products = Product.objects.filter(categories=category)
-        #products = Product.objects.filter(category=category)
+        products = Product.objects.filter(category=category)
         return render(request, 'category.html', {'products':products,'category':category})
 
     except:
         messages.success(request, ("That category doesn't exist"))
         return redirect('home')
+
 
 def product(request,pk):
     product = Product.objects.get(id=pk)
