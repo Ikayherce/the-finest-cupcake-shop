@@ -31,8 +31,8 @@
                                     <br/>
                                     {{ product.description }}
                                     <br/>
-                                   {% if product.categories.exists %}
-                                    {% for category in product.categories.all %}
+                                   {% if product.category.exists %}
+                                    {% for category in product.category.all %}
                                         {{ category.name }}
                                         {% if not forloop.last %}, {% endif %}
                                     {% endfor %}

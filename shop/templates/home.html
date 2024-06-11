@@ -32,7 +32,7 @@
                                     <br/>
                                     {{ product.description }}
                                     <br/>
-                                    {% for category in product.categories.all %}
+                                    {% for category in product.category.all %}
                                     {{ category.name }}
                                     {% if not forloop.last %}, {% endif %}
                                 {% endfor %}
