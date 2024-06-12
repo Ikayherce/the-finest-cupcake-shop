@@ -44,6 +44,7 @@ def cart_delete(request):
         cart.delete(product=product_id)
         
         response = JsonResponse({'product': product_id})
+        messages.success(request, ("The product has been removed from your shopping cart"))
         return response
 
 
