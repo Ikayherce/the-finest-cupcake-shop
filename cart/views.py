@@ -56,6 +56,7 @@ def cart_update(request):
         cart.update(product=product_id, quantity=product_qty)
 
         response_data = {'qty': product_qty}
+        messages.success(request, ("Your cart has been updated"))
         return JsonResponse(response_data)
     else:
         # Handle other cases (GET requests, invalid requests, etc.)
