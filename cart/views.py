@@ -5,11 +5,12 @@ from django.http import JsonResponse
 
 
 def cart_summary(request):
-	# Get the cart
-	cart = Cart(request)
-	cart_products = cart.get_prods
-	quantities = cart.get_quants
-	return render(request, "cart_summary.html", {"cart_products":cart_products, "quantities":quantities})
+    # Get the cart
+    cart = Cart(request)
+    cart_products = cart.get_prods
+    quantities = cart.get_quants
+    totals = cart.total()
+    return render(request, "cart_summary.html", {"cart_products": cart_products, "quantities": quantities, "totals": totals})
 
 
 def cart_add(request):
@@ -58,17 +59,3 @@ def cart_update(request):
         # Handle other cases (GET requests, invalid requests, etc.)
         response_data = {'error': 'Invalid request'}
         return JsonResponse(response_data, status=400)
-        
-#def cart_update(request):
-#	cart = Cart(request)
-#	if request.POST.get('action') == 'post':
-		# Get stuff
-#		product_id = int(request.POST.get('product_id'))
-#		product_qty = int(request.POST.get('product_qty'))
-
-#		cart.update(product=product_id, quantity=product_qty)
-
-#		response = JsonResponse({'qty':product_qty})
-		#return redirect('cart_summary')
-#		messages.success(request, ("Your Cart Has Been Updated"))
-#		return response
