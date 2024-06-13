@@ -8,6 +8,10 @@ from .forms import SignUpForm, UpdateUserForm
 from django import forms
 from django.http import Http404
 
+def update_password(request):
+    return render (request, "udpate_password.html", {})
+    
+
 def update_user(request):
     if request.user.is_authenticated:
         current_user = User.objects.get(id=request.user.id)
