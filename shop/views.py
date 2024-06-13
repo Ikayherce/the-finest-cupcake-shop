@@ -17,7 +17,7 @@ def update_password(request):
 			# Is the form valid
 			if form.is_valid():
 				form.save()
-				messages.success(request, "Your Password Has Been Updated...")
+				messages.success(request, "Your Password Has Been Updated")
 				login(request, current_user)
 				return redirect('update_user')
 			else:
