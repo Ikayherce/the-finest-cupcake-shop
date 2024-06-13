@@ -16,7 +16,6 @@ import json
 from cart.cart import Cart
 
 
-
 def update_info(request):
 	if request.user.is_authenticated:
 		# Get Current User
@@ -34,13 +33,12 @@ def update_info(request):
 			# Save shipping form
 			shipping_form.save()
 
-			messages.success(request, "Your Info Has Been Updated!!")
+			messages.success(request, "Your Info Has Been Updated")
 			return redirect('home')
 		return render(request, "update_info.html", {'form':form, 'shipping_form':shipping_form})
 	else:
-		messages.success(request, "You Must Be Logged In To Access That Page!!")
+		messages.success(request, "You Must Be Logged In To Access That Page")
 		return redirect('home')
-
 
 
 def update_password(request):
