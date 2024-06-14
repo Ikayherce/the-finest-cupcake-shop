@@ -1,4 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from cart.cart import Cart
+from payment.forms import ShippingForm
+from payment.models import ShippingAddress, Order, OrderItem
+from django.contrib.auth.models import User
+from django.contrib import messages
+from shop.models import Product, Profile
+import datetime
 
 
 def checkout(request):
