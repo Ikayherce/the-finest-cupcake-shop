@@ -7,6 +7,12 @@ from django.contrib import messages
 from shop.models import Product, Profile
 import datetime
 
+def process_order(request):
+	if request.POST
+		# Get Billing Info from the last page
+		payment_form = PaymentForm(request.POST or None)
+		# Get Shipping Session Data
+		my_shipping = request.session.get('my_shipping')
 
 def billing_info(request):
 	if request.POST:
