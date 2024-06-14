@@ -27,6 +27,10 @@ Shop
 Cart
 Session 
 
+### Features left to implement
+Front End Admin Dashboard
+Delivery cost in order
+
 ### Web Marketing
 Newsletter
 Facebook

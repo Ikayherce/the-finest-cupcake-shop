@@ -65,10 +65,9 @@ def process_order(request):
 
 
 			messages.success(request, "Order Placed!")
-			return redirect('home')
+			return redirect('order_confirmation')
 
 			
-
 		else:
 			# not logged in
 			# Create Order
@@ -102,7 +101,7 @@ def process_order(request):
 
 
 			messages.success(request, "Order Placed!")
-			return redirect('home')
+			return redirect('order_confirmation')
 
 
 	else:
