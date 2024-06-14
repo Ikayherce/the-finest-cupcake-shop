@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container my-5">
+        <h2>My orders</h2>
+        {% if orders %}
+            <div class="accordion" id="orderHistoryAccordion">
+                {% for order in orders %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading{{ order.id }}">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ order.id }}" aria-expanded="true" aria-controls="collapse{{ order.id }}">
+                                Order #{{ order.id }} - {{ order.date_ordered|date:"F j, Y, g:i a" }}
+                            </button>
+                        </h2>
+                        <div id="collapse{{ order.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ order.id }}" data-bs-parent="#orderHistoryAccordion">
+                            <div class="accordion-body">
+                                <strong>Shipping Address:</strong><br>
+                                {{ order.shipping_address|linebreaksbr }}
+                                <br><br>
+                                <strong>Order Items:</strong>
+                                <ul>
+                                    {% for item in order.orderitem_set.all %}
+                                        <li>{{ item.product.name }} - Quantity: {{ item.quantity }} - Price: ${{ item.price }}</li>
+                                    {% endfor %}
+                                </ul>
+                                <strong>Total Amount Paid:</strong> ${{ order.amount_paid }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>You have no orders.</p>
+        {% endif %}
+    </div>
+{% endblock %}

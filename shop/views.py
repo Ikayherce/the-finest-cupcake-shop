@@ -5,6 +5,9 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm, UpdateUserForm, ChangePasswordForm, UserInfoForm
+from django.contrib.auth.decorators import login_required
+from payment.models import Order
+
 
 from payment.forms import ShippingForm
 from payment.models import ShippingAddress
@@ -15,6 +18,11 @@ from django.db.models import Q
 import json
 from cart.cart import Cart
 
+
+@login_required
+def order_history(request):
+    orders = Order.objects.filter(user=request.user).order_by('-date_ordered')
+    return render(request, 'order_history.html', {'orders': orders})
 
 def update_info(request):
 	if request.user.is_authenticated:

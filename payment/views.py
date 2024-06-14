@@ -5,6 +5,7 @@ from payment.models import ShippingAddress, Order, OrderItem
 from django.contrib.auth.models import User
 from django.contrib import messages
 from shop.models import Product, Profile
+from payment.models import Order
 import datetime
 
 def order_confirmation(request):
