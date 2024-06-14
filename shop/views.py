@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .forms import SignUpForm, UpdateUserForm, ChangePasswordForm, UserInfoForm
+from .forms import SignUpForm, UpdateUserForm, ChangePasswordForm, UserInfoForm, ContactForm
 from django.contrib.auth.decorators import login_required
 from payment.models import Order
 
@@ -18,6 +18,18 @@ from django.db.models import Q
 import json
 from cart.cart import Cart
 
+def contact_success(request):
+    return render(request, 'contact_success.html')
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            return render(request, 'contact_success.html')
+    else:
+        form = ContactForm()
+    
+    return render(request, 'contact.html', {'form': form, 'error_message': "Oops, there was an error. Please try again."})
 
 @login_required
 def order_history(request):

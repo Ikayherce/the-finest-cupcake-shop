@@ -13,4 +13,6 @@ urlpatterns = [
     path('product/<int:pk>', views.product, name='product'),
     path('category/<str:cat>', views.category, name='category'),
     path('order_history/', views.order_history, name='order_history'),
+    path('contact/', views.contact, name='contact'),
+    path('contact/success/', views.contact_success, name='contact_success'),  
 ]

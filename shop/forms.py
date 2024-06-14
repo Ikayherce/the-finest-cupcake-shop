@@ -4,6 +4,13 @@ from django import forms
 from .models import Profile
 
 
+from django import forms
+
+class ContactForm(forms.Form):
+    name = forms.CharField(label='Your Name', max_length=100)
+    email = forms.EmailField(label='Your Email')
+    message = forms.CharField(label='Your Message', widget=forms.Textarea)
+
 class UserInfoForm(forms.ModelForm):
 	phone = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Phone'}), required=False)
 	address1 = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Address 1'}), required=False)
@@ -38,7 +45,7 @@ class ChangePasswordForm(SetPasswordForm):
 
 
 class UpdateUserForm(UserChangeForm):
-	password = None #hide password comment
+	#password = None #hide password comment
 	email = forms.EmailField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Email Address'}))
 	first_name = forms.CharField(label="", max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'First Name'}))
 	last_name = forms.CharField(label="", max_length=100, widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Last Name'}))
