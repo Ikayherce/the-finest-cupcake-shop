@@ -7,6 +7,9 @@ from django.contrib import messages
 from shop.models import Product, Profile
 import datetime
 
+def order_confirmation(request):
+    return render(request, 'payment/order_confirmation.html')
+
 def process_order(request):
 	if request.POST:
 		# Get the cart
