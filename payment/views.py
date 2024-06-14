@@ -36,7 +36,6 @@ def process_order(request):
 			create_order.save()
 
 			# Add order items
-			
 			# Get the order ID
 			order_id = create_order.pk
 			
