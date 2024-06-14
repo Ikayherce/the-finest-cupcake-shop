@@ -1,67 +1,47 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Thank you for your order!</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">See your order details below</p>
-                </div>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Thank you for your order!</h1>
+                <p class="lead fw-normal text-white-50 mb-0">See your order details below</p>
             </div>
-        </header>
-        <br/>
-        <div class="container">
-            <div class="row">
-                
-                    <div class="col-md-6 offset-md-3">
-          <div class="card">
-          <div class="card-header">
-            Order Summary
-          </div>
-          <div class="card-body">
-            {% for product in cart_products %}
-            {{ product.name }}: 
-            ${{ product.price }}
-                <br/>
-                <small>Quantity: 
-                {% for key, value in quantities.items %}
-                    {% if key == product.id|slugify %}
-                        {{ value }}
-                    {% endif %}
-                {% endfor %}</small>
-                <br/><br/>
-
-            {% endfor %}
-            Total:  ${{ totals }}
-            <br/><br/>
-          </div>
         </div>
-<br/><br/>
-<div class="card">
-  <div class="card-header">
-    Shipping Info
-  </div>
-  <div class="card-body">
-    <form method="POST" action="{% url 'billing_info' %}">
-        {% csrf_token %}
-    {{ shipping_form.as_p }}
-
-  </div>
-</div>
-<br/>
-
-</form>
-<br/><br/>
-
-
+    </header>
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        Order Summary
+                    </div>
+                    <div class="card-body">
+                        {% for item in order_items %}
+                            <strong>{{ item.product.name }}</strong>: ${{ item.price }}
+                            <br/>
+                            <small>Quantity: {{ item.quantity }}</small>
+                            <br/><br/>
+                        {% endfor %}
+                        <strong>Total:</strong> ${{ order.amount_paid }}
+                        <br/><br/>
+                    </div>
+                </div>
+                <br/><br/>
+                <div class="card">
+                    <div class="card-header">
+                        Shipping Info
+                    </div>
+                    <div class="card-body">
+                        <p>{{ order.full_name }}</p>
+                        <p>{{ order.shipping_address|linebreaksbr }}</p>
+                        <p>{{ order.email }}</p>
+                    </div>
+                </div>
+                <br/>
             </div>
         </div>
     </div>
-
-
-
-
 {% endblock %}
