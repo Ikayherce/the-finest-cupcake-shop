@@ -7,8 +7,8 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Billing information</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Please enter your payment details</p>
+                    <h1 class="display-4 fw-bolder">Payment information</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Please enter your billing details</p>
                 </div>
             </div>
         </header>
@@ -72,7 +72,7 @@
     Billing Info
   </div>
   <div class="card-body">
-    <form method="POST" action="{% url 'process_order' %}">
+    <form method="POST" action="">
       {% csrf_token %}
     {{ billing_form.as_p }}
     
@@ -87,18 +87,6 @@
 </button>
 </form>
 <br/><br/>
-
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-{% endblock %}
 
 
             </div>
