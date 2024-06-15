@@ -7,9 +7,9 @@ from .models import Profile
 from django import forms
 
 class ContactForm(forms.Form):
-    name = forms.CharField(label='Your Name', max_length=100)
-    email = forms.EmailField(label='Your Email')
-    message = forms.CharField(label='Your Message', widget=forms.Textarea)
+    name = forms.CharField(max_length=255)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
 
 class UserInfoForm(forms.ModelForm):
 	phone = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Phone'}), required=False)

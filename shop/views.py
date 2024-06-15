@@ -41,10 +41,10 @@ def contact(request):
             )
             return redirect('contact_success')
         else:
-            return render(request, 'shop/contact.html', {'form': form, 'error_message': "Oops, there was an error. Please try again."})
+            return render(request, 'contact.html', {'form': form, 'error_message': "Oops, there was an error. Please try again."})
     else:
         form = ContactForm()
-    return render(request, 'shop/contact.html', {'form': form})
+    return render(request, 'contact.html', {'form': form})
 
 
 @login_required
