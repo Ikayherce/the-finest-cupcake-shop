@@ -1,9 +1,17 @@
 asgiref==3.8.1
+boto3==1.34.127
+botocore==1.34.127
+cloudinary==1.36.0
 dj-database-url==2.2.0
+dj3-cloudinary-storage==0.0.6
 Django==3.2.25
 django-allauth==0.63.3
+django-storages==1.14.3
 gunicorn==22.0.0
+jmespath==1.0.1
 pillow==10.3.0
 psycopg2==2.9.9
 pytz==2024.1
+s3transfer==0.10.1
 sqlparse==0.5.0
+urllib3==1.26.18
