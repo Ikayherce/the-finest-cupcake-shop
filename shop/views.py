@@ -18,18 +18,34 @@ from django.db.models import Q
 import json
 from cart.cart import Cart
 
+
+# shop/views.py
+
+from django.shortcuts import render, redirect
+from .forms import ContactForm
+from .models import ContactMessage
+
 def contact_success(request):
     return render(request, 'contact_success.html')
+
 
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            return render(request, 'contact_success.html')
+            # Save the contact message to the database
+            ContactMessage.objects.create(
+                name=form.cleaned_data['name'],
+                email=form.cleaned_data['email'],
+                message=form.cleaned_data['message']
+            )
+            return redirect('contact_success')
+        else:
+            return render(request, 'shop/contact.html', {'form': form, 'error_message': "Oops, there was an error. Please try again."})
     else:
         form = ContactForm()
-    
-    return render(request, 'contact.html', {'form': form, 'error_message': "Oops, there was an error. Please try again."})
+    return render(request, 'shop/contact.html', {'form': form})
+
 
 @login_required
 def order_history(request):

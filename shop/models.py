@@ -3,6 +3,17 @@ import datetime
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
+#Model for contact messages sent through contact form
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+
 #Customer Profile
 # Create Customer Profile
 class Profile(models.Model):
