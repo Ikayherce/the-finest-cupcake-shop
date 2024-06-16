@@ -1,3 +1,4 @@
+import logging
 import datetime
 import stripe
 import json 
@@ -144,6 +145,8 @@ def process_order(request):
 
 
 def billing_info(request):
+    logging.basicConfig(level=logging.INFO)
+
     # Directly set the Stripe API key using the secret key stored in your settings
     stripe.api_key = settings.STRIPE_SECRET_KEY
     
@@ -175,6 +178,9 @@ def billing_info(request):
                 metadata={'shipping': my_shipping_json},  # Correctly use the serialized JSON string
             )
 
+            # Log successful payment intent creation
+            logging.info(f"PaymentIntent created successfully with ID: {payment_intent.id}")
+            
             # Generate client secret for the PaymentIntent
             client_secret = payment_intent.client_secret
 
@@ -195,16 +201,20 @@ def billing_info(request):
                 messages.error(request, "Please log in to proceed.")
                 return redirect('login')  # Redirect to login page if not authenticated
         except Exception as e:
+            # Log the exception
+            logging.error(f"Failed to create payment intent: {str(e)}")
             messages.error(request, f"Failed to create payment intent: {str(e)}")
             return redirect('home')
     else:
         messages.error(request, "Access Denied")
         return redirect('home')
-        
+
 #def billing_info(request):
+    # Directly set the Stripe API key using the secret key stored in your settings
+#    stripe.api_key = settings.STRIPE_SECRET_KEY
+    
 #    stripe_public_key = settings.STRIPE_PUBLIC_KEY
-#    stripe_secret_key = settings.STRIPE_SECRET_KEY
-#    stripe.api_key = stripe_secret_key
+#    stripe_secret_key = settings.STRIPE_SECRET_KEY  # This line is kept for clarity, even though it's not used
 
 #    if request.method == 'POST':
 #        cart = Cart(request)
@@ -213,107 +223,51 @@ def billing_info(request):
 #        totals = cart.cart_total()
 
         # Validate and sanitize POST data before using it
- #       my_shipping = request.POST.copy()  # Make a mutable copy to modify safely
+#        my_shipping = request.POST.copy()  # Make a mutable copy to modify safely
         # Perform validation/sanitization here
-  #      request.session['my_shipping'] = my_shipping
-
-   #     context = {
-    #        'cart_products': cart_products,
-     #       'quantities': quantities,
-      #      'totals': totals,
-      #       'shipping_info': my_shipping,
-       #     'stripe_public_key': stripe_public_key,
-        #    'client_secret': 'Generated dynamically',  # Ideally generated dynamically
-        #}
-
-     #   if request.user.is_authenticated:
-      #      billing_form = PaymentForm()
-      #      context['billing_form'] = billing_form
-     #      return render(request, "payment/billing_info.html", context)
-      #  else:
-       #     messages.error(request, "Please log in to proceed.")
-        #    return redirect('login')  # Redirect to login page if not authenticated
-    #else:
-     #   messages.error(request, "Access Denied")
-      #  return redirect('home')
-
-    # Handle Stripe API call and other logic here
-    
-
-#def billing_info(request):
-#    if request.POST:
-        # Get the cart
-#        cart = Cart(request)
-#        cart_products = cart.get_prods
-#        quantities = cart.get_quants
-#        totals = cart.cart_total()
-
-        # Create a session with Shipping Info
-#        my_shipping = request.POST
 #        request.session['my_shipping'] = my_shipping
 
-        # Common context data
-#        context = {
-#           'cart_products': cart_products,
-#            'quantities': quantities,
-#            'totals': totals,
-#            'shipping_info': request.POST,
-#            'stripe_public_key': 'pk_test_51PKGHHDUgyvSj23RYm2LKUyTlBao2HTQh8fjslVw8ulv2Mi1buNPdlP3KftDWA3CLqECydSArRwmrDqollWTC2UI00uNuMqyoX',
-#            'client_secret': 'test client secret',
-#        }
+        # Calculate total amount based on cart totals
+#        total_amount = round(totals * 100)  # Correctly convert to cents and round
+        
+#        try:
+            # Serialize the my_shipping dictionary into a JSON string
+#            my_shipping_json = json.dumps(my_shipping)
 
-        # Check to see if user is logged in
- #       if request.user.is_authenticated:
-            # Get The Billing Form
- #           billing_form = PaymentForm()
- #           context['billing_form'] = billing_form
- #           return render(request, "payment/billing_info.html", context)
- #       else:
-            # Not logged in
-            # Get The Billing Form
- #           billing_form = PaymentForm()
- #           context['billing_form'] = billing_form
- #           return render(request, "payment/billing_info.html", context)
+            # Create a PaymentIntent with the calculated total amount
+#            payment_intent = stripe.PaymentIntent.create(
+#                amount=total_amount,
+#                currency='usd',  # Use the appropriate currency code
+#                metadata={'shipping': my_shipping_json},  # Correctly use the serialized JSON string
+#            )
 
+            # Generate client secret for the PaymentIntent
+#            client_secret = payment_intent.client_secret
+
+#            context = {
+#                'cart_products': cart_products,
+#                'quantities': quantities,
+#                'totals': totals,
+#                'shipping_info': my_shipping,
+#                'stripe_public_key': stripe_public_key,
+#               'client_secret': client_secret,  # Pass the client secret to the template
+#            }
+
+#            if request.user.is_authenticated:
+#                billing_form = PaymentForm()
+#                context['billing_form'] = billing_form
+#                return render(request, "payment/billing_info.html", context)
+#            else:
+#                messages.error(request, "Please log in to proceed.")
+#                return redirect('login')  # Redirect to login page if not authenticated
+#        except Exception as e:
+#            messages.error(request, f"Failed to create payment intent: {str(e)}")
+#            return redirect('home')
 #    else:
-#        messages.success(request, "Access Denied")
- #       return redirect('home')
+#        messages.error(request, "Access Denied")
+#        return redirect('home')
 
 
-
-
-#def billing_info(request):
-#	if request.POST:
-		# Get the cart
-#		cart = Cart(request)
-#		cart_products = cart.get_prods
-#		quantities = cart.get_quants
-#		totals = cart.cart_total()
-
-		# Create a session with Shipping Info
-#		my_shipping = request.POST
-#		request.session['my_shipping'] = my_shipping
-
-		# Check to see if user is logged in
-#		if request.user.is_authenticated:
-			# Get The Billing Form
-#			billing_form = PaymentForm()
-#			return render(request, "payment/billing_info.html", {"cart_products":cart_products, "quantities":quantities, "totals":totals, "shipping_info":request.POST, "billing_form":billing_form})
-
-#		else:
-			# Not logged in
-			# Get The Billing Form
-#			billing_form = PaymentForm()
-#			return render(request, "payment/billing_info.html", {"cart_products":cart_products, "quantities":quantities, "totals":totals, "shipping_info":request.POST, "billing_form":billing_form})
-
-
-	#shipping_form = request.POST
-	#	return render(request, "payment/billing_info.html", {"cart_products":cart_products, "quantities":quantities, "totals":totals, "shipping_form":shipping_form})	
-	#else:
-	#	messages.success(request, "Access Denied")
-	#	return redirect('home')
-
-	
 
 def checkout(request):
 	# Get the cart
