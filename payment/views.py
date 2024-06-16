@@ -4,6 +4,7 @@ from payment.forms import ShippingForm, PaymentForm
 from payment.models import ShippingAddress, Order, OrderItem
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.conf import settings
 from shop.models import Product, Profile
 from payment.models import Order
 import datetime
@@ -158,7 +159,7 @@ def billing_info(request):
             'totals': totals,
             'shipping_info': request.POST,
             'stripe_public_key': 'pk_test_51PKGHHDUgyvSj23RYm2LKUyTlBao2HTQh8fjslVw8ulv2Mi1buNPdlP3KftDWA3CLqECydSArRwmrDqollWTC2UI00uNuMqyoX',
-            # 'client_secret': 'test client secret',
+            'client_secret': 'test client secret',
         }
 
         # Check to see if user is logged in
