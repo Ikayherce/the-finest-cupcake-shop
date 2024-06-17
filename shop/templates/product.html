@@ -4,7 +4,6 @@
 <div class="container">
 
     <div class="container">
-        <br/>
         <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -13,11 +12,9 @@
               <div class="col-md-8">
                 <div class="card-body">
                     <center>
-                <br/>
                   <h5 class="card-title">{{ product.name }}</h5>
-                  <p class="card-text">{{ product.description }}</p>
-                  <p class="card-text">{{ product.price }}
-                  <br><br/>
+                  <p class="card-text mt-3">{{ product.description }}</p>
+                  <p class="card-text mt-3">{{ product.price }}
                   <div class="row justify-content-center">
                     <div class="col-md-2">Quantity:</div>
                                 <div class="col-md-2">
@@ -35,9 +32,8 @@
                                 </select>
                                 </div>
                             </div>
-                    <br><br/>
                   </p>
-                  <p class="card-text">
+                  <p class="card-text mt-3">
                     {% if product.categories.exists %}
                     {% for category in product.categories.all %}
                         {{ category.name }}
@@ -45,7 +41,6 @@
                     {% endfor %}
                 {% endif %}
                   </p>
-                  <br><br/>
                 <a href ="{% url 'home' %}" class ="btn btn-secondary">Home</a>
                 <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
                 </center>
@@ -55,7 +50,6 @@
                 </div>
               </div>
         </div>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <script>
   
   // Check if button pressed
