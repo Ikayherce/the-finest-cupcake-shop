@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Product, Category, Profile
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -140,9 +141,27 @@ def product(request,pk):
     product = Product.objects.get(id=pk)
     return render(request,'product.html', {'product':product})
 
+#def home(request):
+#    products = Product.objects.all()
+#    return render(request,'home.html', {'products':products})
+
 def home(request):
-    products = Product.objects.all()
-    return render(request,'home.html', {'products':products})
+    product_list = Product.objects.all()
+
+    # Paginator instance to paginate the product_list
+    paginator = Paginator(product_list, 8)  # Show 8 products per page
+
+    page = request.GET.get('page')
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        products = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        products = paginator.page(paginator.num_pages)
+
+    return render(request, 'home.html', {'products': products})
 
 def about(request):
     return render(request,'about.html', {})

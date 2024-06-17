@@ -2,53 +2,92 @@
 
 {% block content %}
 
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">The Finest Cupcake Shop</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Buy Cupcakes!</p>
-                </div>
-            </div>
-        </header>
-        <!-- Section-->
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    
-                    {% for product in products %}
+<!-- Header -->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">The Finest Cupcake Shop</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Buy Cupcakes!</p>
+        </div>
+    </div>
+</header>
 
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">{{ product.name }}</h5>
-                                    <!-- Product price-->
-                                    $ {{ product.price }}
-                                    <br/>
-                                    {{ product.description }}
-                                    <br/>
-                                    {% for category in product.category.all %}
-                                    {{ category.name }}
-                                    {% if not forloop.last %}, {% endif %}
-                                {% endfor %}
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id %}">View product</a></div>
-                            </div>
+<!-- Section -->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+            {% for product in products %}
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image -->
+                    <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
+                    <!-- Product details -->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name -->
+                            <h5 class="fw-bolder">{{ product.name }}</h5>
+                            <!-- Product price -->
+                            $ {{ product.price }}
+                            <br/>
+                            {{ product.description }}
+                            <br/>
+                            {% for category in product.category.all %}
+                            {{ category.name }}
+                            {% if not forloop.last %}, {% endif %}
+                            {% endfor %}
                         </div>
                     </div>
-                    
-                    {% endfor %}
-
+                    <!-- Product actions -->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'product' product.id %}">View product</a></div>
+                    </div>
                 </div>
             </div>
-        </section>
+            {% endfor %}
 
-    {% endblock %}
+        </div>
+        <!-- Pagination controls -->
+        <div class="row">
+            <div class="col">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        {% if products.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1" aria-label="First">
+                                <span aria-hidden="true">&laquo;&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ products.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% for num in products.paginator.page_range %}
+                            {% if products.number == num %}
+                            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                            {% elif num > products.number|add:'-3' and num < products.number|add:'3' %}
+                            <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if products.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ products.next_page_number }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ products.paginator.num_pages }}" aria-label="Last">
+                                <span aria-hidden="true">&raquo;&raquo;</span>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
