@@ -1,5 +1,7 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+Deployed link: https://the-finest-cupcake-shop-bc4f44f161e9.herokuapp.com/
+
 
 Contents
 ### The Finest Cupcake Shop
