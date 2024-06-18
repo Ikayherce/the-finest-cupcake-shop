@@ -65,7 +65,11 @@
     color: #356059 !important;
 }
 
+/*About Page, Contact Page*/
 
+.div-text-custom{
+    color: #356059 !important;
+}
 /* Footer */
 .footer-custom {
     background-color: #D8EFD3 !important;
