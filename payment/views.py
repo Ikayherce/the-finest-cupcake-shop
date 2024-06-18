@@ -198,8 +198,11 @@ def billing_info(request):
                 context['billing_form'] = billing_form
                 return render(request, "payment/billing_info.html", context)
             else:
-                messages.error(request, "Please log in to proceed.")
-                return redirect('login')  # Redirect to login page if not authenticated
+                billing_form = PaymentForm()
+                context['billing_form'] = billing_form
+                return render(request, "payment/billing_info.html", context)
+                #messages.error(request, "Please log in to proceed.")
+                #return redirect('login')  # Redirect to login page if not authenticated
         except Exception as e:
             # Log the exception
             logging.error(f"Failed to create payment intent: {str(e)}")
