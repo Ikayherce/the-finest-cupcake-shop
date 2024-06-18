@@ -65,10 +65,20 @@
     color: #356059 !important;
 }
 
-/*About Page, Contact Page*/
+/*Across all page templates*/
 
 .div-text-custom{
     color: #356059 !important;
+}
+
+.custom-button {
+    border-color: #356059 !important;
+    color:#356059 !important;
+}
+
+.custom-button:hover {
+    background-color:#356059 !important;
+    color: #ffffff !important;
 }
 /* Footer */
 .footer-custom {
