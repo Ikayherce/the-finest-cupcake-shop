@@ -1,16 +1,38 @@
+/* Navbar and header*/
+.navbar-custom {
+    background-color: #356059 !important;
+    color:#ffffff !important;
+}
+
+.navbar-brand-custom {
+    color:#ffffff !important;
+}
+
+
 .header-custom {
     background-color: #D8EFD3 !important;
+    font-family: "Dosis", sans-serif !important;
+   /* height: 275px; /* Ensure height is auto to respect padding */
+    /*min-height: 50px; /* Set a minimum height */
 }
 
 .h1-custom {
     color: #356059 !important;
-    font-family: "Playwrite NZ", cursive !important;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .p-custom {
     color: #356059 !important;
 }
 
+
+/* Footer */
 .footer-custom {
     background-color: #D8EFD3 !important;
+    color: #356059 !important;
+}
+
+.p-div-custom {
+    color: #356059 !important;
 }
