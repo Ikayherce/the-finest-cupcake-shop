@@ -2,8 +2,7 @@
 .navbar-custom { 
     background-color: #356059 !important;
     color:#ffffff !important;
-    /*font-family: "DM Serif Display", serif !important;*/
-
+    font-family:  "Quicksand", sans-serif !important;
 }
 
 .navbar-custom:hover { 
@@ -13,6 +12,7 @@
 .navbar-brand-custom {
     color:#ffffff !important;
     font-family: "Playwrite PL", cursive !important;
+    padding-bottom: 0.7rem;
 }
 
 .navbar-brand-custom:hover {
