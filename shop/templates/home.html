@@ -3,11 +3,11 @@
 {% block content %}
 
 <!-- Header -->
-<header class="bg-dark py-5">
+<header class="bg-dark py-5 header-custom">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">The Finest Cupcake Shop</h1>
-            <p class="lead fw-normal text-white-50 mb-0">Buy Cupcakes!</p>
+            <h1 class="display-4 fw-bolder h1-custom">The Finest Cupcake Shop</h1>
+            <p class="lead fw-normal text-white-50 mb-0 p-custom">Buy Cupcakes!</p>
         </div>
     </div>
 </header>
@@ -88,6 +88,8 @@
             </div>
         </div>
     </div>
+ <!-- Custom CSS -->
+ <link href="{% static 'css/shop.css' %}" rel="stylesheet">
 </section>
 
 {% endblock %}
