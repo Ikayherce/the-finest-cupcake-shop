@@ -5,20 +5,20 @@
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand navbar-brand-custom" href="{% url 'home' %}">The Finest Cupcake Shop</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse navbar-div-custom" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                <li class="nav-item navbar-item-custom"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item navbar-item-custom"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                <li class="nav-item navbar-item-custom"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
 
              {% if user.is_authenticated %}
              
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown navbar-dropdown-custom">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{% url 'update_user' %}">User Profile</a></li>
-                    <li><a class="dropdown-item" href="{% url 'update_info' %}">User Details</a></li> 
-                    <li><a class="dropdown-item" href="{% url 'order_history' %}">My orders</a></li>
+                    <li><a class="dropdown-item navbar-item-custom" href="{% url 'update_user' %}">User Profile</a></li>
+                    <li><a class="dropdown-item navbar-item-custom" href="{% url 'update_info' %}">User Details</a></li> 
+                    <li><a class="dropdown-item navbar-item-custom" href="{% url 'order_history' %}">My orders</a></li>
                 </ul>
             </li>
 
@@ -30,16 +30,16 @@
 
             {% endif %}
             
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'home' %}">All Products </a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="{% url 'category' 'Best Selling Cupcakes'%}">Best-Selling Cupcakes</a></li>
-                        <li><a class="dropdown-item" href="{% url 'category' 'Gluten Free'%}">Gluten-Free</a></li>
-                        <li><a class="dropdown-item" href="{% url 'category' 'Soy Free'%}">Soy-Free</a></li>
-                        <li><a class="dropdown-item" href="{% url 'category' 'Nut Free'%}">Nut-Free</a></li>
-                        <li><a class="dropdown-item" href="{% url 'category' 'Theme Decorated Cupcakes'%}">Theme-Decorated Cupcakes</a></li> 
+                        <li><a class="dropdown-item navbar-item-custom" href="{% url 'home' %}">All Products </a></li>
+                        <li><hr class="dropdown-divider navbar-item-custom" /></li>
+                        <li><a class="dropdown-item navbar-item-custom" href="{% url 'category' 'Best Selling Cupcakes'%}">Best-Selling Cupcakes</a></li>
+                        <li><a class="dropdown-item navbar-item-custom" href="{% url 'category' 'Gluten Free'%}">Gluten-Free</a></li>
+                        <li><a class="dropdown-item navbar-item-custom" href="{% url 'category' 'Soy Free'%}">Soy-Free</a></li>
+                        <li><a class="dropdown-item navbar-item-custom" href="{% url 'category' 'Nut Free'%}">Nut-Free</a></li>
+                        <li><a class="dropdown-item navbar-item-custom" href="{% url 'category' 'Theme Decorated Cupcakes'%}">Theme-Decorated Cupcakes</a></li> 
                     </ul>
                 </li>
             </ul>

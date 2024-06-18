@@ -8,6 +8,18 @@
     color:#ffffff !important;
 }
 
+/*.navbar-div-custom {
+
+}*/
+/*.navbar-container-custom {
+    color:#ffffff !important;
+    background-color: #356059 !important;
+}*/
+
+.navbar-item-custom {
+    color:#356059 !important;
+    /*background-color: #356059 !important;*/
+}
 .header-custom {
     background-color: #D8EFD3 !important;
     font-family: "Dosis", sans-serif !important;
