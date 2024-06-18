@@ -2,6 +2,8 @@
 .navbar-custom { 
     background-color: #356059 !important;
     color:#ffffff !important;
+    /*font-family: "DM Serif Display", serif !important;*/
+
 }
 
 .navbar-custom:hover { 
@@ -10,6 +12,7 @@
 
 .navbar-brand-custom {
     color:#ffffff !important;
+    font-family: "Playwrite SK", cursive !important;
 }
 
 .navbar-brand-custom:hover {
@@ -25,7 +28,8 @@
 
 .cart-button-custom:hover {
     border-color: #e09f3e !important;  
-    background-color: 2px solid #356059;
+    background-color: #356059 !important;
+    color:#e09f3e !important;  
 
 }
 
@@ -46,21 +50,34 @@
 }
 .header-custom {
     background-color: #D8EFD3 !important;
-    font-family: "Dosis", sans-serif !important;
+    font-family:  "Playwrite SK", cursive !important;
 }
+
+/*.custom-button-add-cart {
+    border-color: #356059 !important;  
+    background-color: #D8EFD3 !important;
+    color:#356059 !important;  
+}
+
+.custom-button-add-cart:hover{
+    border-color:  #D8EFD3 !important;
+    background-color:#356059 !important;  
+    color:#D8EFD3 !important;
+}*/
 
 /*Header*/
 
 .h1-custom {
     color: #356059 !important;
-    font-family: "Dosis", sans-serif;
     font-optical-sizing: auto;
+    /*font-family: "Rubik", sans-serif !important;*/
+    font-family: "Playwrite SK", cursive !important;
+
+
 }
 
 .h2-custom {
     color: #356059 !important;
-    font-family: "Dosis", sans-serif;
-    font-optical-sizing: auto;
 }
 .p-custom {
     color: #356059 !important;
@@ -94,8 +111,6 @@
 
 .h5-custom {
     color: #356059 !important;
-    font-family: "Dosis", sans-serif;
-    font-optical-sizing: auto;
 }
 
 .page-link-custom{

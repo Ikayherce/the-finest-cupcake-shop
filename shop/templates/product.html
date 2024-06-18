@@ -13,7 +13,7 @@
 <div class="container">
 
     <div class="container">
-      <br><br/>
+      <br/>
         <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -24,11 +24,11 @@
                     <center>
                       <br/>
                   <h5 class="card-title h5-custom">{{ product.name }}</h5>
-                  <p class="card-text mt-3">{{ product.description }}</p>
-                  <p class="card-text mt-3">{{ product.price }}
+                  <p class="card-text p-custom">{{ product.description }}</p>
+                  <p class="card-text p-custom">{{ product.price }}
                   <div class="row justify-content-center">
-                    <div class="col-md-2">Quantity:</div>
-                                <div class="col-md-2">
+                    <div class="col-md-2 div-text-custom">Quantity:</div>
+                                <div class="col-md-2 div-text-custom">
                                 <select class="form-select form-select-sm" id="qty-cart">
                                   <option value="1">1</option>
                                   <option value="2">2</option>
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                   </p>
-                  <p class="card-text mt-3">
+                  <p class="card-text mt-3 p-custom">
                     {% if product.categories.exists %}
                     {% for category in product.categories.all %}
                         {{ category.name }}
@@ -52,8 +52,8 @@
                     {% endfor %}
                 {% endif %}
                   </p>
-                <a href ="{% url 'home' %}" class ="btn btn-secondary">Home</a>
-                <button type="button" value="{{ product.id }}" class="btn btn-secondary custom-button" id="add-cart">Add To Cart</button>
+                <a href ="{% url 'home' %}" class ="btn btn-secondary custom-button">Home</a>
+                <button type="button" value="{{ product.id }}" class="btn custom-button" id="add-cart">Add To Cart</button>
                 </center>
                 </div>
                   </div>

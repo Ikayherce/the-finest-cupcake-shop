@@ -48,7 +48,6 @@ Unfortunately due to time shortage some important features are left to implement
 - Facebook mock-up page is not added
 
 Other non-essential features that I wanted to add and didn't have time to are:
-- CSS Customisation
 - Front End Admin Dashboard
 - Delivery cost in order
 
