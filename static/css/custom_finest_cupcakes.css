@@ -85,6 +85,19 @@
 
 /*Across all page templates*/
 
+.alert-container {
+    width: 100%;
+    z-index: 1050; /* Ensure it appears above other elements */
+    left: 0;
+    right: 0;
+    position: relative; /* Ensure it is part of the document flow */
+}
+
+.alert {
+    margin: 0 auto;
+    width: 100%;
+}
+
 .div-text-custom{
     color: #356059 !important;
     font-family:  "Quicksand", sans-serif !important;
