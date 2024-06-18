@@ -12,7 +12,7 @@
 
 .navbar-brand-custom {
     color:#ffffff !important;
-    font-family: "Playwrite SK", cursive !important;
+    font-family: "Playwrite PL", cursive !important;
 }
 
 .navbar-brand-custom:hover {
@@ -50,7 +50,7 @@
 }
 .header-custom {
     background-color: #D8EFD3 !important;
-    font-family:  "Playwrite SK", cursive !important;
+    font-family:  "Playwrite PL", cursive !important;
 }
 
 /*.custom-button-add-cart {
@@ -71,7 +71,7 @@
     color: #356059 !important;
     font-optical-sizing: auto;
     /*font-family: "Rubik", sans-serif !important;*/
-    font-family: "Playwrite SK", cursive !important;
+    font-family: "Playwrite PL", cursive !important;
 
 
 }
@@ -136,4 +136,5 @@
 
 .p-div-custom {
     color: #356059 !important;
+    font-family: "Playwrite PL", cursive !important;
 }
