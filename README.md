@@ -1,27 +1,38 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+
+# The Finest Cupcake Shop
+![AmIresponsiveCupcakeShop](readme_images/amiresponsivepp5.png)
 Deployed link: https://the-finest-cupcake-shop-bc4f44f161e9.herokuapp.com/
 
+### Contents
+#### The Finest Cupcake Shop
+#### UX
+##### Purpose
+##### User Stories
+##### Wireframes
+#### Home page
+#### Shop app
+#### Cart app
+### Payment app
+### Agile Methodology
+### Existing Features
+### Features left to implement
+### Web Marketing
+### Technologies Used
 
-Contents
-### The Finest Cupcake Shop
 ### UX
 #### Purpose
+The purpose of The Finest Cupcake Shop is for a small cupcake business to reach their audience and sell their products. The Finest Cupcake Shop offers specialises in plant-based products and allergy friendly options.
 #### User Stories
-https://docs.google.com/spreadsheets/d/1pGTRyGdKJuW5GuSuWoNzlggfeXokuzwzf6P6scxlwEY/edit#gid=0 
-User Stories that have been implemented by the creation of the apps in this project
-User stories that are left to implement
-#### Wireframes
-### Home page
-### Shop - shop app
-### FAQ - questions app
-### Shopping cart app
-### User app - allauth
-### Profile app
+Link to my User Stories in spreadsheet format https://docs.google.com/spreadsheets/d/1pGTRyGdKJuW5GuSuWoNzlggfeXokuzwzf6P6scxlwEY/edit#gid=0 
+
 
 ### Agile Methodology
-Canban board and issues
-Sprints - milestones
+Link to my Canban board on github: https://github.com/users/Ikayherce/projects/5/views/1 
+
+![UserStoriesSegment1](readme_images/user_stories1.png)
+![UserStoriesSegment2](readme_images/user_stories2.png)
+
 
 ### Existing Features
 Navbar and Footer
@@ -30,61 +41,65 @@ Cart
 Session 
 
 ### Features left to implement
-Front End Admin Dashboard
-Delivery cost in order
+Unfortunately due to time shortage some important features are left to implement or add to this project:
+- Stripe payment implementation is not completed
+- Robot.txt file is not included
+- Subscription e-mail is not added
+- Facebook mock-up page is not added
+
+Other non-essential features that I wanted to add and didn't have time to are:
+- CSS Customisation
+- Front End Admin Dashboard
+- Delivery cost in order
 
 ### Web Marketing
-Newsletter
-Facebook
+- Subscription
+Left to implement
+- Facebook Page
+Not added
 
 ### Technologies Used
-Languages Used
+Languages Used: 
+- Python
+- CSS
+- HTML
+- Javascript 
+
 Technologies and Programs Used:
-Frameworks Libraries and Programs Used
-django
-jquery
-bootstrap
-Code Validation
-HTML beautify
-HTML valiation
-CSS validation
-JavaScript validation
-Python beautify
-Pep 8
-Python validator
+- django
+- jquery
+- bootstrap
+
+
 ### Tests
-Lighthouse
-Manual tests
-First release
-Second release
+#### Code Validation: 
+- HTML validation:
+Not performed
+- CSS validation
+Not performed
+- JavaScript validation
+Not performed
+- Python validator
+Not performed
+- Lighthouse
+Not performed
+- Manual tests
+Not performed
+
 ### Project Bugs and Solutions:
-
-Not a bug but I did realise I wanted to enable multiple categories to be applied to products when product model has already been made. So I changed model in separate branch and then merged branches. I had a problem after that so I had to clear all migrations to delete data and start all over again and make new migrations.
-
-
+#### Creating new branches
+For this project I have created branches to test implementing solutions to different issues that have come up. The most important example is the change in my Product Model to add multiple categories (initially it was possible to just assign one category to each product). 
 
 
-### Deployment and forking repo / new branch
+### Deployment 
 Deployment to heroku
 Forking the GitHub Repository
 Getting Stripe keys
-Getting email variables from gmail
 Setting AWS bucket
 
 
-
 ### Resources, credits and acknowledgements. 
-Online resources
-Tutorials and inspiration
-
-Readme: 
-https://github.com/JoGorska/bonsai-shop
-https://github.com/ValeP314/pp5-tangled-treasures-v2
-
-User stories template inspired in https://www.smartsheet.com/user-story-templates
-
-For the code: 
-Tutorials I followed:
+For the code, I followed the following tutorials: 
 
 - Code Institute's Boutique Ado walkthrough tutorial
 - https://www.youtube.com/watch?v=_ELCMngbM0E&list=PL-51WBLyFTg0omnamUjL1TCVov7yDTRng
@@ -93,5 +108,9 @@ Tutorials I followed:
 - https://www.youtube.com/watch?v=UqSJCVePEWU&list=PLOLrQ9Pn6caxY4Q1U9RjO1bulQp5NDYS_
 
 
-Register Form
-https://github.com/flatplanet/musker/blob/main/musker/forms.py
+For the readme I got inspiration from these projects: 
+https://github.com/JoGorska/bonsai-shop
+https://github.com/ValeP314/pp5-tangled-treasures-v2
+
+User stories template inspired in https://www.smartsheet.com/user-story-templates
+
