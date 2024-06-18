@@ -8,7 +8,6 @@
     color:#ffffff !important;
 }
 
-
 .header-custom {
     background-color: #D8EFD3 !important;
     font-family: "Dosis", sans-serif !important;
@@ -22,6 +21,11 @@
     font-optical-sizing: auto;
 }
 
+.h2-custom {
+    color: #356059 !important;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+}
 .p-custom {
     color: #356059 !important;
 }
