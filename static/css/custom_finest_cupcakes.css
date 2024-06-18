@@ -25,6 +25,8 @@
 
 .cart-button-custom:hover {
     border-color: #e09f3e !important;  
+    background-color: 2px solid #356059;
+
 }
 
 .navbar-custom-icon {
@@ -32,8 +34,7 @@
 }
 
 .navbar-custom-icon:hover {
-    background-color: #D8EFD3 !important;
-    color: #356059 !important;
+    background-color: 2px solid #356059;
 }
 
 .navbar-item-custom {
@@ -74,11 +75,16 @@
 .custom-button {
     border-color: #356059 !important;
     color:#356059 !important;
+    background-color: #ffffff !important;
 }
 
 .custom-button:hover {
     background-color:#356059 !important;
     color: #ffffff !important;
+}
+
+.custom-form {
+    color:#356059 !important;
 }
 /* Footer */
 .footer-custom {
