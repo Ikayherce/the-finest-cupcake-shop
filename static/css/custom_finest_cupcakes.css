@@ -24,6 +24,8 @@
     border: 2px solid hsl(109, 47%, 88%) !important; 
     color: #D8EFD3 !important;   
     border-color: #D8EFD3 !important;  
+    font-family:  "Quicksand", sans-serif !important;
+
 }
 
 .cart-button-custom:hover {
@@ -85,6 +87,12 @@
 
 .div-text-custom{
     color: #356059 !important;
+    font-family:  "Quicksand", sans-serif !important;
+}
+
+.text-custom{
+    color: #356059 !important;
+    font-family:  "Quicksand", sans-serif !important;
 }
 
 .custom-button {

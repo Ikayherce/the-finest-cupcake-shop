@@ -3,7 +3,7 @@
 {% block content %}
 
 <header class="bg-dark py-5 header-custom ">
-  <div class="container px-4 px-lg-5 my-5">
+  <div class="container px-4 px-lg-5 my-5 text-custom">
       <div class="text-center text-white">
           <h1 class="display-4 fw-bolder h1-custom">{{ product.name }}</h1>
       </div>
@@ -14,22 +14,22 @@
 
     <div class="container">
       <br/>
-        <div class="card mb-3">
+        <div class="card mb-3 text-custom">
             <div class="row g-0">
-              <div class="col-md-4 d-flex align-items-center justify-content-center">
+              <div class="col-md-4 d-flex align-items-center justify-content-center text-custom">
                 <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="..." style="max-height: 100%; max-width: 100%; object-fit: contain;">
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body text-custom">
                     <center>
                       <br/>
                   <h5 class="card-title h5-custom">{{ product.name }}</h5>
-                  <p class="card-text p-custom">{{ product.description }}</p>
-                  <p class="card-text p-custom">{{ product.price }}
+                  <p class="card-text text-custom">{{ product.description }}</p>
+                  <p class="card-text text-custom">{{ product.price }}
                   <div class="row justify-content-center">
-                    <div class="col-md-2 div-text-custom">Quantity:</div>
+                    <div class="col-md-2 text-custom">Quantity:</div>
                                 <div class="col-md-2 div-text-custom">
-                                <select class="form-select form-select-sm" id="qty-cart">
+                                <select class="form-select form-select-sm text-custom" id="qty-cart">
                                   <option value="1">1</option>
                                   <option value="2">2</option>
                                   <option value="3">3</option>

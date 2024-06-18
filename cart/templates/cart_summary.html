@@ -20,19 +20,19 @@
 
         <div class="container">
             <br/>
-            <div class="card mb-3">
+            <div class="card mb-3 text-custom">
                 <div class="row g-0">
-                  <div class="col-md-4 d-flex align-items-center justify-content-center">
+                  <div class="col-md-4 d-flex align-items-center justify-content-center text-custom">
                     <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="..." style="max-height: 100%; max-width: 100%; object-fit: contain;">
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
+                  <div class="col-md-8 text-custom">
+                    <div class="card-body text-custom">
                         <center>
                     <br/>
                       <h5 class="card-title">{{ product.name }}</h5>
-                      <p class="card-text">{{ product.description }}</p>
-                      <p class="card-text">{{ product.price }}</p>
-                      <p class="card-text">
+                      <p class="card-text text-custom">{{ product.description }}</p>
+                      <p class="card-text text-custom">{{ product.price }}</p>
+                      <p class="card-text text-custom">
                         {% if product.categories.exists %}
                             {% for category in product.categories.all %}
                                 {{ category.name }}
@@ -41,8 +41,8 @@
                         {% endif %}
                       </p>
 
-                      <div class="row justify-content-center">
-                        <div class="col-md-2">Quantity:</div>
+                      <div class="row justify-content-center text-custom">
+                        <div class="col-md-2 text-custom">Quantity:</div>
                                     <div class="col-md-2">
                                     <select class="form-select form-select-sm" id="select{{product.id}}">
                                     
