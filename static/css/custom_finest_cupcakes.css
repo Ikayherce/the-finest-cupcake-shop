@@ -4,22 +4,27 @@
     color:#ffffff !important;
 }
 
+.navbar-custom:hover { 
+    color:#e09f3e !important;
+}
+
 .navbar-brand-custom {
     color:#ffffff !important;
 }
 
+.navbar-brand-custom:hover {
+    color:#e09f3e !important;
+}
+
 .cart-button-custom {
     background-color: 2px solid #356059;
-    border: 2px solid hsl(109, 47%, 88%) !important; /* Initial border color */
-    color: #D8EFD3 !important; /* Initial text color */
-    border-color: #D8EFD3 !important; /* Change this to your desired hover border color */
+    border: 2px solid hsl(109, 47%, 88%) !important; 
+    color: #D8EFD3 !important;   
+    border-color: #D8EFD3 !important;  
 }
 
 .cart-button-custom:hover {
-    /*color: #356059 !important; /* Optional: Change text color on hover */
-    /*background-color: #D8EFD3 !important; /* Optional: Change background color on hover */
-    border-color: #ffd60a !important; /* Change this to your desired hover border color */
-
+    border-color: #e09f3e !important;  
 }
 
 .navbar-custom-icon {
@@ -30,24 +35,20 @@
     background-color: #D8EFD3 !important;
     color: #356059 !important;
 }
-/*.navbar-div-custom {
-
-}*/
-/*.navbar-container-custom {
-    color:#ffffff !important;
-    background-color: #356059 !important;
-}*/
 
 .navbar-item-custom {
     color:#356059 !important;
-    /*background-color: #356059 !important;*/
+}
+
+.navbar-item-custom:hover {
+    color:#e09f3e !important;
 }
 .header-custom {
     background-color: #D8EFD3 !important;
     font-family: "Dosis", sans-serif !important;
-   /* height: 275px; /* Ensure height is auto to respect padding */
-    /*min-height: 50px; /* Set a minimum height */
 }
+
+/*Header*/
 
 .h1-custom {
     color: #356059 !important;
