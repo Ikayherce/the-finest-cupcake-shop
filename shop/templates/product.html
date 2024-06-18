@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <center>
                       <br/>
-                  <h5 class="card-title">{{ product.name }}</h5>
+                  <h5 class="card-title h5-custom">{{ product.name }}</h5>
                   <p class="card-text mt-3">{{ product.description }}</p>
                   <p class="card-text mt-3">{{ product.price }}
                   <div class="row justify-content-center">
@@ -53,7 +53,7 @@
                 {% endif %}
                   </p>
                 <a href ="{% url 'home' %}" class ="btn btn-secondary">Home</a>
-                <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
+                <button type="button" value="{{ product.id }}" class="btn btn-secondary custom-button" id="add-cart">Add To Cart</button>
                 </center>
                 </div>
                   </div>

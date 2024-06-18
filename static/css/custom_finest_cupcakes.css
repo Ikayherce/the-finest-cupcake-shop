@@ -81,6 +81,7 @@
 .custom-button:hover {
     background-color:#356059 !important;
     color: #ffffff !important;
+
 }
 
 .custom-form {
@@ -89,6 +90,27 @@
 
 .custom-label {
     color:#356059 !important;
+}
+
+.h5-custom {
+    color: #356059 !important;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.page-link-custom{
+    color: #356059 !important;
+}
+
+/*Home page*/
+
+.pagination .page-item .page-link{
+    color: #356059; 
+}
+.pagination .page-item.active .page-link {
+    background-color: transparent; /* Remove background color */
+    border-color: #356059; /* Remove border color */
+    color: #356059; 
 }
 
 /* Footer */
