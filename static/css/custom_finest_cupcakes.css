@@ -116,7 +116,9 @@
 .page-link-custom{
     color: #356059 !important;
 }
-
+.page-link-custom:hover{
+    color: #e09f3e !important;
+}
 /*Home page*/
 
 .pagination .page-item .page-link{
