@@ -2,6 +2,14 @@
 {% load static %}
 {% block content %}
 
+<header class="bg-dark py-5 header-custom ">
+  <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+          <h1 class="display-4 fw-bolder h1-custom">{{ product.name }}</h1>
+      </div>
+  </div>
+</header>
+<br><br/>
 <div class="container">
 
     <div class="container">
@@ -48,11 +56,12 @@
                 <button type="button" value="{{ product.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
                 </center>
                 </div>
-                
                   </div>
                 </div>
               </div>
+              <br><br/> <br><br/>
         </div>
+
 <script>
   
   // Check if button pressed
