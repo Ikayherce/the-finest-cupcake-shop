@@ -53,17 +53,15 @@
     font-family:  "Playwrite PL", cursive !important;
 }
 
-/*.custom-button-add-cart {
-    border-color: #356059 !important;  
-    background-color: #D8EFD3 !important;
-    color:#356059 !important;  
+.custom-button-inversed {
+    background-color:#356059 !important;  
+    color:#ffff !important;  
 }
 
-.custom-button-add-cart:hover{
-    border-color:  #D8EFD3 !important;
-    background-color:#356059 !important;  
-    color:#D8EFD3 !important;
-}*/
+.custom-button-inversed:hover{
+    background-color:#ffffff !important;  
+    color:#356059 !important; 
+}
 
 /*Header*/
 

@@ -4,11 +4,11 @@
 {% block content %}
 
         <!-- Header-->
-        <header class="bg-dark py-5 header-custom ">
-            <div class="container px-4 px-lg-5 my-5">
+        <header class="bg-dark py-5 header-custom header-custom">
+            <div class="container px-4 px-lg-5 my-5 div-text-custom">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Checkout</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Review Your Order</p>
+                    <h1 class="display-4 fw-bolder h1-custom">Checkout</h1>
+                    <p class="lead fw-normal text-white-50 mb-0 p-custom">Review Your Order</p>
                 </div>
             </div>
         </header>
@@ -21,7 +21,7 @@
           <div class="card-header">
             Order Summary
           </div>
-          <div class="card-body">
+          <div class="card-body div-text-custom">
             {% for product in cart_products %}
             {{ product.name }}: 
             ${{ product.price }}
@@ -37,12 +37,12 @@
             {% endfor %}
             Total:  ${{ totals }}
             <br/><br/>
-            <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-outline-secondary">Update Items</a>
+            <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-outline-secondary custom-button">Update Items</a>
           </div>
         </div>
 <br/><br/>
 <div class="card">
-  <div class="card-header">
+  <div class="card-header div-text-custom">
     Shipping Info
   </div>
   <div class="card-body">
@@ -54,7 +54,7 @@
 </div>
 <br/>
 
-<button type="submit" class="btn btn-secondary">
+<button type="submit" class="btn btn-secondary custom-button">
         Continue To Billing
 </button>
 

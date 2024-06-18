@@ -3,23 +3,23 @@
 {% block content %}
 
 <!-- Header-->
-<header class="bg-dark py-5">
-    <div class="container px-4 px-lg-5 my-5">
+<header class="bg-dark py-5 header-custom">
+    <div class="container px-4 px-lg-5 my-5 div-text-custom">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Payment information</h1>
-            <p class="lead fw-normal text-white-50 mb-0">Please enter your billing details</p>
+            <h1 class="display-4 fw-bolder h1-custom">Payment information</h1>
+            <p class="lead fw-normal text-white-50 mb-0 p-custom">Please enter your billing details</p>
         </div>
     </div>
 </header>
 <br/>
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 offset-md-3 div-text-custom">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header div-text-custom">
                     Order Summary
                 </div>
-                <div class="card-body">
+                <div class="card-body div-text-custom">
                     {% for product in cart_products %}
                         {{ product.name }}: 
                         {% if product.is_sale %}
@@ -38,15 +38,15 @@
                     {% endfor %}
                     Total:  ${{ totals }}
                     <br/><br/>
-                    <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-outline-secondary">Update Items</a>
+                    <a href="{% url 'cart_summary' %}" class="btn btn-sm btn-outline-secondary custom-button">Update Items</a>
                 </div>
             </div>
             <br/><br/>
-            <div class="card">
-                <div class="card-header">
+            <div class="card div-text-custom">
+                <div class="card-header div-text-custom">
                     Shipping Info
                 </div>
-                <div class="card-body">
+                <div class="card-body div-text-custom">
                     Name: {{ shipping_info.shipping_full_name }}<br/>
                     Email: {{ shipping_info.shipping_email }}<br/>
                     Address 1: {{ shipping_info.shipping_address1 }}<br/>
@@ -55,15 +55,15 @@
                     Zipcode: {{ shipping_info.shipping_zipcode }}<br/>
                     Country: {{ shipping_info.shipping_country }}<br/>
                     <br/>
-                    <a href="{% url 'checkout' %}" class="btn btn-outline-secondary">Update Shipping</a>
+                    <a href="{% url 'checkout' %}" class="btn btn-outline-secondary custom-button">Update Shipping</a>
                 </div>
             </div>
             <br/><br/>
-            <div class="card">
-                <div class="card-header">
+            <div class="card div-text-custom">
+                <div class="card-header div-text-custom">
                     Billing Info
                 </div>
-                <div class="card-body">
+                <div class="card-body div-text-custom">
                     <form method="POST" action="{% url 'process_order' %}">
                         {% csrf_token %}
                         {{ billing_form.as_p }}
@@ -82,7 +82,7 @@
                 <br><br/>
 
                 <br/>
-                <button type="submit" class="btn btn-secondary">
+                <button type="submit" class="btn btn-secondary custom-button-inversed">
                     Pay Now
                 </button>
                     </form>
