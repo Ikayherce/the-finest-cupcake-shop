@@ -1,5 +1,5 @@
 /* Navbar and header*/
-.navbar-custom {
+.navbar-custom { 
     background-color: #356059 !important;
     color:#ffffff !important;
 }
@@ -8,6 +8,28 @@
     color:#ffffff !important;
 }
 
+.cart-button-custom {
+    background-color: 2px solid #356059;
+    border: 2px solid hsl(109, 47%, 88%) !important; /* Initial border color */
+    color: #D8EFD3 !important; /* Initial text color */
+    border-color: #D8EFD3 !important; /* Change this to your desired hover border color */
+}
+
+.cart-button-custom:hover {
+    /*color: #356059 !important; /* Optional: Change text color on hover */
+    /*background-color: #D8EFD3 !important; /* Optional: Change background color on hover */
+    border-color: #ffd60a !important; /* Change this to your desired hover border color */
+
+}
+
+.navbar-custom-icon {
+    background-color: #356059;
+}
+
+.navbar-custom-icon:hover {
+    background-color: #D8EFD3 !important;
+    color: #356059 !important;
+}
 /*.navbar-div-custom {
 
 }*/

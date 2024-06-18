@@ -7,14 +7,14 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse navbar-div-custom" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item navbar-item-custom"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
-                <li class="nav-item navbar-item-custom"><a class="nav-link" href="{% url 'about' %}">About</a></li>
-                <li class="nav-item navbar-item-custom"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                <li class="nav-item navbar-item-custom"><a class="nav-link navbar-custom  " aria-current="page" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item navbar-item-custom"><a class="nav-link navbar-custom   " href="{% url 'about' %}">About</a></li>
+                <li class="nav-item navbar-item-custom"><a class="nav-link navbar-custom  " href="{% url 'contact' %}">Contact</a></li>
 
              {% if user.is_authenticated %}
              
-            <li class="nav-item dropdown navbar-dropdown-custom">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+            <li class="nav-item dropdown navbar-dropdown-custom navbar-custom ">
+                <a class="nav-link dropdown-toggle navbar-custom " id="navbarDropdown " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item navbar-item-custom" href="{% url 'update_user' %}">User Profile</a></li>
                     <li><a class="dropdown-item navbar-item-custom" href="{% url 'update_info' %}">User Details</a></li> 
@@ -22,16 +22,16 @@
                 </ul>
             </li>
 
-            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Log out</a></li>
+            <li class="nav-item navbar-custom "><a class="nav-link navbar-custom" href="{% url 'logout' %}">Log out</a></li>
 
             {% else %}
-            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Log in</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+            <li class="nav-item navbar-custom "><a class="nav-link navbar-custom " href="{% url 'login' %}">Log in</a></li>
+            <li class="nav-item navbar-custom "><a class="nav-link navbar-custom " href="{% url 'register' %}">Register</a></li>
 
             {% endif %}
             
                 <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+                    <a class="nav-link dropdown-toggle navbar-custom" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item navbar-item-custom" href="{% url 'home' %}">All Products </a></li>
                         <li><hr class="dropdown-divider navbar-item-custom" /></li>
@@ -44,7 +44,7 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <a href="{% url 'cart_summary' %}" class="btn btn-outline-dark"> <i class="bi-cart-fill me-1"></i>
+                <a href="{% url 'cart_summary' %}" class="btn btn-outline-dark cart-button-custom"> <i class="bi-cart-fill me-1 navbar-custom-icon"></i>
                     Cart
                     <span class="badge bg-dark text-white ms-1 rounded-pill" id="cart_quantity">{{ cart|length }}</span></a>
             </form>
