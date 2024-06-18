@@ -2,7 +2,7 @@
 {% block content %}
 
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <header class="bg-dark py-5 header-custom">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder h1-custom">Register</h1>
@@ -15,7 +15,7 @@
             <div class="row">
                     <div class="col-md-6 offset-md-3">
                         <br/> <br/>
-                        <form method="POST" action="{% url 'register' %}">
+                        <form method="POST" action="{% url 'register' %}" class="custom-form">
                           {% csrf_token %}
 
                           {{ form.as_p }}
