@@ -10,6 +10,40 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.conf import settings
 from shop.models import Product, Profile
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
+@csrf_exempt
+def stripe_webhook(request):
+    payload = request.body
+    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+    event = None
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, settings.STRIPE_WH_SECRET
+        )
+    except ValueError as e:
+        # Invalid payload
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError as e:
+        # Invalid signature
+        return HttpResponse(status=400)
+
+    # Handle the event
+    if event.type == 'payment_intent.succeeded':
+        payment_intent = event.data.object
+        # Handle successful payment here
+        # For example, update your database, send notifications, etc.
+        print("PaymentIntent was successful!")
+    elif event.type == 'payment_intent.payment_failed':
+        payment_intent = event.data.object
+        # Handle failed payment here
+        # For example, notify the user, retry the payment, etc.
+        print("PaymentIntent failed!")
+
+    return JsonResponse({'status': 'success'})
 
 
 def order_confirmation(request):
@@ -211,65 +245,6 @@ def billing_info(request):
     else:
         messages.error(request, "Access Denied")
         return redirect('home')
-
-#def billing_info(request):
-    # Directly set the Stripe API key using the secret key stored in your settings
-#    stripe.api_key = settings.STRIPE_SECRET_KEY
-    
-#    stripe_public_key = settings.STRIPE_PUBLIC_KEY
-#    stripe_secret_key = settings.STRIPE_SECRET_KEY  # This line is kept for clarity, even though it's not used
-
-#    if request.method == 'POST':
-#        cart = Cart(request)
-#        cart_products = cart.get_prods()
-#        quantities = cart.get_quants()
-#        totals = cart.cart_total()
-
-        # Validate and sanitize POST data before using it
-#        my_shipping = request.POST.copy()  # Make a mutable copy to modify safely
-        # Perform validation/sanitization here
-#        request.session['my_shipping'] = my_shipping
-
-        # Calculate total amount based on cart totals
-#        total_amount = round(totals * 100)  # Correctly convert to cents and round
-        
-#        try:
-            # Serialize the my_shipping dictionary into a JSON string
-#            my_shipping_json = json.dumps(my_shipping)
-
-            # Create a PaymentIntent with the calculated total amount
-#            payment_intent = stripe.PaymentIntent.create(
-#                amount=total_amount,
-#                currency='usd',  # Use the appropriate currency code
-#                metadata={'shipping': my_shipping_json},  # Correctly use the serialized JSON string
-#            )
-
-            # Generate client secret for the PaymentIntent
-#            client_secret = payment_intent.client_secret
-
-#            context = {
-#                'cart_products': cart_products,
-#                'quantities': quantities,
-#                'totals': totals,
-#                'shipping_info': my_shipping,
-#                'stripe_public_key': stripe_public_key,
-#               'client_secret': client_secret,  # Pass the client secret to the template
-#            }
-
-#            if request.user.is_authenticated:
-#                billing_form = PaymentForm()
-#                context['billing_form'] = billing_form
-#                return render(request, "payment/billing_info.html", context)
-#            else:
-#                messages.error(request, "Please log in to proceed.")
-#                return redirect('login')  # Redirect to login page if not authenticated
-#        except Exception as e:
-#            messages.error(request, f"Failed to create payment intent: {str(e)}")
-#            return redirect('home')
-#    else:
-#        messages.error(request, "Access Denied")
-#        return redirect('home')
-
 
 
 def checkout(request):

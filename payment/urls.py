@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from.views import stripe_webhook
 
 urlpatterns = [
     path('payment_success', views.payment_success, name='payment_success'),
@@ -7,4 +8,5 @@ urlpatterns = [
     path('billing_info', views.billing_info, name='billing_info'),
     path('process_order', views.process_order, name='process_order'),
     path('order_confirmation', views.order_confirmation, name='order_confirmation'),
+    path('webhook/', stripe_webhook),
     ]
