@@ -47,6 +47,7 @@ I started by planning out my user stories offline on a spreadsheet that is color
 - Shop app : includes home page, product page, user profile update pages, category pages, order history page, about page and contact page
 - Cart app: includes cart summary page
 - Payment app: includes all payment and order pages
+- Admin dashboard (Django's)
 - Session: the user will not lose their cart if they log out unless they delete it.
 
 ### Features left to implement
@@ -123,6 +124,11 @@ shop owner, updating their data.
 #### Creating new branches
 For this project I have created branches to test implementing solutions to different issues that have come up. The most relevant example is the change in my Product Model to add multiple categories (initially it was possible to just assign one category to each product). I carried out the changes in a second branch and then merged with main branch. 
 
+#### Stripe
+I am encountering issues with stripe. All keys are correctly set but the payment intent fails after being created. I am unfortunately forced to solve this after my first submission due to time shortage. 
+
+### 404 Custom Page
+I am encountering issues creating my custom 404 page. The configuration is correct in principle but the page does not appear when a 404 error is triggered. I am unfortunately forced to solve this after my first submission due to time shortage. 
 
 ### Deployment
 #### Deployment to Heroku
