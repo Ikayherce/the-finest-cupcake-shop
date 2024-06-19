@@ -4,21 +4,22 @@
 ![AmIresponsiveCupcakeShop](readme_images/amiresponsivepp5.png)
 Deployed link: https://the-finest-cupcake-shop-bc4f44f161e9.herokuapp.com/
 
-### Contents
-#### The Finest Cupcake Shop
-#### UX
-##### Purpose
-##### User Stories
-##### Wireframes
-#### Home page
-#### Shop app
-#### Cart app
-### Payment app
-### Agile Methodology
-### Existing Features
-### Features left to implement
-### Web Marketing
-### Technologies Used
+# Table of Contents
+
+- [The Finest Cupcake Shop](#the-finest-cupcake-shop)
+- [UX](#ux)
+    - [Purpose](#purpose)
+    - [User Stories](#user-stories)
+    - [Wireframes](#wireframes)
+- [Home Page](#home-page)
+- [Shop App](#shop-app)
+- [Cart App](#cart-app)
+- [Payment App](#payment-app)
+- [Agile Methodology](#agile-methodology)
+- [Existing Features](#existing-features)
+- [Features Left to Implement](#features-left-to-implement)
+- [Web Marketing](#web-marketing)
+- [Technologies Used](#technologies-used)
 
 ### UX
 #### Purpose
