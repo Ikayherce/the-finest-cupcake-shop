@@ -2,7 +2,7 @@
 
 # The Finest Cupcake Shop
 ![AmIresponsiveCupcakeShop](readme_images/amiresponsivepp5.png)
-Deployed link: https://the-finest-cupcake-shop-bc4f44f161e9.herokuapp.com/
+[Deployed Link](https://the-finest-cupcake-shop-bc4f44f161e9.herokuapp.com/)
 
 # Table of Contents
 
