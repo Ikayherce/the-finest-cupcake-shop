@@ -20,6 +20,12 @@
 - [Features Left to Implement](#features-left-to-implement)
 - [Web Marketing](#web-marketing)
 - [Technologies Used](#technologies-used)
+- [Tests](#technologies-used)
+- [Deployment](#technologies-used)
+- [AWS](#setting-aws-bucket)
+- [Stripe](#getting-stripe-keys)
+- [Credits](#resources-credits-and-acknowledgements)
+
 
 ### UX
 #### Purpose
@@ -38,9 +44,10 @@ I started by planning out my user stories offline on a spreadsheet that is color
 
 ### Existing Features
 - Navbar and Footer
-- Shop
-- Cart
-- Session 
+- Shop app : includes home page, product page, user profile update pages, category pages, order history page, about page and contact page
+- Cart app: includes cart summary page
+- Payment app: includes all payment and order pages
+- Session: the user will not lose their cart if they log out unless they delete it.
 
 ### Features left to implement
 Unfortunately due to time shortage some important features are left to implement or add to this project:
@@ -103,6 +110,8 @@ shop owner, updating their data.
 - Both logged in and not logged in users can place orders
 - Logged in user can access their order history page
 - User can contact shop through contact page
+- User can log out and in and the session will keep their products in the cart
+- All SoMe links new tab
 
 #### Admin tests
 - Admin can add, update or remove categories in admin dashboard (django's)
@@ -197,7 +206,7 @@ For this project I have created branches to test implementing solutions to diffe
 
 
 
-#### Getting Stripe keys
+### Getting Stripe keys
 1. Navigate to the Developers tab. Locate the API keys section in the sidebar menu.
    - Duplicate `STRIPE_PUBLIC_KEY` and `STRIPE_SECRET_KEY`.
 
@@ -208,7 +217,7 @@ For this project I have created branches to test implementing solutions to diffe
    - Retrieve the webhook signing secret and input it into both your application's settings and Heroku as the `STRIPE_WH_SECRET` environment variable.
 
 
-#### Setting AWS bucket
+### Setting AWS bucket
 1. Visit the Amazon Web Services page and log in or create an account.
 2. You should be redirected to the AWS Management Console. If not, click the AWS logo in the top-left corner or select "Services" and choose "Console Home".
 3. Below the header, click "All Services" and find "S3" under "Storage".
@@ -227,7 +236,7 @@ For this project I have created branches to test implementing solutions to diffe
 11. Create a new user within this group and assign them programmatic access.
 12. Download the user's credentials as a `.csv` file.
 
-## Connecting Django to AWS S3
+#### Connecting Django to AWS S3
 
 1. Install `boto3` and `django-storages`.
 2. Add `storages` to your `INSTALLED_APPS` in `settings.py`.
@@ -237,7 +246,7 @@ For this project I have created branches to test implementing solutions to diffe
 6. Update `settings.py` to use the custom storage classes for static and media files.
 
 
-### Resources, credits and acknowledgements. 
+### Resources, credits and acknowledgements
 For the code, I followed the following tutorials: 
 
 - Code Institute's Boutique Ado walkthrough tutorial
