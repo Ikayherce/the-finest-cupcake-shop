@@ -1,8 +1,6 @@
-
-
 # The Finest Cupcake Shop
 ![AmIresponsiveCupcakeShop](readme_images/amiresponsivepp5.png)
-Deployed link: https://the-finest-cupcake-shop-bc4f44f161e9.herokuapp.com/
+[Deployed Link](https://the-finest-cupcake-shop-bc4f44f161e9.herokuapp.com/)
 
 # Table of Contents
 
@@ -24,9 +22,9 @@ Deployed link: https://the-finest-cupcake-shop-bc4f44f161e9.herokuapp.com/
 ### UX
 #### Purpose
 The purpose of The Finest Cupcake Shop is for a small cupcake business to reach their audience and sell their products. The Finest Cupcake Shop offers specialises in plant-based products and allergy friendly options.
+
 #### User Stories
 Link to my User Stories in spreadsheet format https://docs.google.com/spreadsheets/d/1pGTRyGdKJuW5GuSuWoNzlggfeXokuzwzf6P6scxlwEY/edit#gid=0 
-
 
 ### Agile Methodology
 Link to my Canban board on github: https://github.com/users/Ikayherce/projects/5/views/1 
@@ -48,9 +46,8 @@ Unfortunately due to time shortage some important features are left to implement
 - Subscription e-mail is not added
 - Facebook mock-up page is not added
 
-Other non-essential features that I wanted to add and didn't have time to are:
+Non-essential features that I wanted to add and didn't have time to are:
 - Front End Admin Dashboard
-- Delivery cost in order
 
 ### Web Marketing
 - Subscription
