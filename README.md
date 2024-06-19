@@ -84,10 +84,31 @@ Not performed
 Not performed
 - Python validator
 Not performed
-- Lighthouse
-Not performed
-- Manual tests
-Not performed
+
+#### Manual tests
+
+#### User tests 
+- User can navigate to home page, browse products and go to the next or previous page
+- User can navigate to other pages through the navbar links, including the "user" and "categories" dropdowns
+- User can click on product and open product page
+- User can add product to the cart
+- User can update or delete the cart
+- User can log in 
+- User can log out
+- User can register
+- User can navigate through all payment stages with links provided, fill out and send shipping and billing forms
+- User can pay with test credit card number (payment intent is created but not successful at this stage)
+- User gets messages when logging in, out, registering, making an order, deleting or updating items in cart, contacting    
+shop owner, updating their data. 
+- Both logged in and not logged in users can place orders
+- Logged in user can access their order history page
+- User can contact shop through contact page
+
+#### Admin tests
+- Admin can add, update or remove categories in admin dashboard (django's)
+- Admin can add, update or remove products in admin dashboard (django's)
+- Admin can access and update user's or order's data in admin dashboard (django's)
+
 
 ### Project Bugs and Solutions:
 #### Creating new branches
