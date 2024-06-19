@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g!14bl0$d8-am-2rc2(@fpum_=a4b42oiw+9*ic48_x&ugjcj4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
+#DEBUG = True
 
 
 ALLOWED_HOSTS = ['8000-ikayherce-thefinestcupc-od1yo7fimsf.ws.codeinstitute-ide.net', 'the-finest-cupcake-shop-bc4f44f161e9.herokuapp.com']
@@ -165,5 +165,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET')
 
 
