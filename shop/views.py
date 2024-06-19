@@ -208,17 +208,20 @@ def register_user(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
-            #login user
+            # Login user
             user = authenticate(username=username, password=password)
-            login(request, user)
-            messages.success(request,("Username created. Please fill out your details"))
-            return redirect('update_info')
-        else: 
-            messages.success(request,("Oops,there was a problem registering, please try again"))
-            return redirect('register')
-
+            if user is not None:
+                login(request, user)
+                messages.success(request, "Username created. Please fill out your details")
+                return redirect('update_info')
+            else:
+                messages.error(request, "Authentication failed. Please try logging in.")
+                return redirect('login')
+        else:
+            messages.error(request, "Oops, there was a problem registering, please try again.")
+            return render(request, 'register.html', {'form': form})
     else:
-        return render(request,'register.html',{'form':form})
+        return render(request, 'register.html', {'form': form})
