@@ -29,7 +29,9 @@ The purpose of The Finest Cupcake Shop is to provide a platform for a small cupc
 #### User Stories
 - [Link to my User Stories in spreadsheet format]( https://docs.google.com/spreadsheets/d/1pGTRyGdKJuW5GuSuWoNzlggfeXokuzwzf6P6scxlwEY/edit#gid=0)
 - [Link to my Canban board on github](https://github.com/users/Ikayherce/projects/5/views/1)
+
 ![UserStoriesSegment1](readme_images/user_stories1.png)
+
 ![UserStoriesSegment2](readme_images/user_stories2.png)
 
 ### Agile Methodology
@@ -38,8 +40,6 @@ I started by planning out my user stories offline on a spreadsheet that is color
 
 - [Link to my User Stories in spreadsheet format]( https://docs.google.com/spreadsheets/d/1pGTRyGdKJuW5GuSuWoNzlggfeXokuzwzf6P6scxlwEY/edit#gid=0)
 - [Link to my Canban board on github](https://github.com/users/Ikayherce/projects/5/views/1)
-
-
 
 
 ### Existing Features
@@ -86,15 +86,14 @@ Technologies, Frameworks, APIs and Programs Used:
 #### Code Validation: 
 - HTML validation:
 Not performed
-- CSS validation
+- CSS validation:
 Not performed
-- JavaScript validation
+- JavaScript validation:
 Not performed
-- Python validator
+- Python validator:
 Not performed
 
 #### Manual tests
-
 #### User tests 
 - User can navigate to home page, browse products and go to the next or previous page
 - User can navigate to other pages through the navbar links, including the "user" and "categories" dropdowns
@@ -127,7 +126,7 @@ For this project I have created branches to test implementing solutions to diffe
 #### Stripe
 I am encountering issues with stripe. All keys are correctly set but the payment intent fails after being created. I am unfortunately forced to solve this after my first submission due to time shortage. 
 
-### 404 Custom Page
+#### 404 Custom Page
 I am encountering issues creating my custom 404 page. The configuration is correct in principle but the page does not appear when a 404 error is triggered. I am unfortunately forced to solve this after my first submission due to time shortage. 
 
 ### Deployment
