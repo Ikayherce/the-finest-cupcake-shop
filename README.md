@@ -10,11 +10,6 @@
 - [UX](#ux)
     - [Purpose](#purpose)
     - [User Stories](#user-stories)
-    - [Wireframes](#wireframes)
-- [Home Page](#home-page)
-- [Shop App](#shop-app)
-- [Cart App](#cart-app)
-- [Payment App](#payment-app)
 - [Agile Methodology](#agile-methodology)
 - [Existing Features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
@@ -31,6 +26,12 @@
 #### Purpose
 The purpose of The Finest Cupcake Shop is to provide a platform for a small cupcake business to reach its audience and sell their products. The shop specializes in offering plant-based and allergy-friendly cupcakes, catering to a wide range of dietary needs and preferences.
 
+#### User Stories
+- [Link to my User Stories in spreadsheet format]( https://docs.google.com/spreadsheets/d/1pGTRyGdKJuW5GuSuWoNzlggfeXokuzwzf6P6scxlwEY/edit#gid=0)
+- [Link to my Canban board on github](https://github.com/users/Ikayherce/projects/5/views/1)
+![UserStoriesSegment1](readme_images/user_stories1.png)
+![UserStoriesSegment2](readme_images/user_stories2.png)
+
 ### Agile Methodology
 
 I started by planning out my user stories offline on a spreadsheet that is color-coded to group user stories into milestones. I then moved on to the Canban board on github and have been using both methods during the process, starting with the "must have" stories. 
@@ -38,8 +39,7 @@ I started by planning out my user stories offline on a spreadsheet that is color
 - [Link to my User Stories in spreadsheet format]( https://docs.google.com/spreadsheets/d/1pGTRyGdKJuW5GuSuWoNzlggfeXokuzwzf6P6scxlwEY/edit#gid=0)
 - [Link to my Canban board on github](https://github.com/users/Ikayherce/projects/5/views/1)
 
-![UserStoriesSegment1](readme_images/user_stories1.png)
-![UserStoriesSegment2](readme_images/user_stories2.png)
+
 
 
 ### Existing Features
