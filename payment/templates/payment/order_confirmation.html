@@ -2,23 +2,23 @@
 
 {% block content %}
     <!-- Header-->
-    <header class="bg-dark py-5 header-custom ">
+    <header class="bg-dark py-5 header-custom header-custom">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Thank you for your order!</h1>
-                <p class="lead fw-normal text-white-50 mb-0">See your order details below</p>
+                <h1 class="display-4 fw-bolder h1-custom">Thank you for your order!</h1>
+                <p class="lead fw-normal text-white-50 mb-0 p-custom">See your order details below</p>
             </div>
         </div>
     </header>
     <br/>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="card">
-                    <div class="card-header">
+    <div class="container div-text-custom">
+        <div class="row div-text-custom">
+            <div class="col-md-6 offset-md-3 div-text-custom">
+                <div class="card p-custom">
+                    <div class="card-header div-text-custom">
                         Order Summary
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-custom">
                         {% for item in order_items %}
                             <strong>{{ item.product.name }}</strong>: ${{ item.price }}
                             <br/>
@@ -42,9 +42,10 @@
                 </div>
                 <br/>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'order_history' %}" class="btn btn-primary">My orders</a>
+                    <a href="{% url 'order_history' %}" class="btn btn-secondary custom-button-inversed">My orders</a>
                 {% endif %}
-                <a href="{% url 'home' %}" class="btn btn-secondary">Keep shopping</a>
+                <a href="{% url 'home' %}" class="btn btn-secondary custom-button-inversed">Keep shopping</a>
+                <br><br/>
             </div>
         </div>
     </div>
